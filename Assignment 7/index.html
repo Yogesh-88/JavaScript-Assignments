@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temperature Convertor</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style>
+            input {
+                outline: 0;
+                border-width: 0 0 2px;
+                border-color: black;
+            }
+            label{
+                font-size: 20px;
+            }
+        </style>
+        <script>
+            function temp(){
+                var tempF=document.getElementById("tempF").value;
+                var tempC=document.getElementById("tempC");
+                tempC.value=5/9*(parseInt(tempF)-32);
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <div class="d-flex justify-content-center align-items-center" style="height: 600px;">
+            <div class="w-50">
+                <div class="border border-3 rounded p-5">
+                        <h2 class="text-center">Temperature Convertor</h2>
+                        <div class="row mt-5">
+                            <label class="col">Enter Temperature in fahrenheit  </label>
+                            <input class="col" id="tempF" type="text" onkeyup="temp()" >
+                        </div>
+                        <div class="row mt-5">
+                            <label class="col">Temperature in celcius</label>
+                            <input class="col" type="text" id="tempC">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

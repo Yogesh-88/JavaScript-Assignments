@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bill Calculator</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function bill(){
+                var price=document.getElementById("price").value;
+                var quantity=document.getElementById("quantity").value;
+                var discount=document.getElementById("discount").value;
+                var basicBill=price*quantity;
+                var GST=basicBill*0.18;
+                var dis=basicBill*discount/100;
+                var fBill=basicBill+GST-dis;
+                document.getElementById("lblPrice").innerHTML=price;
+                document.getElementById("lblQty").innerHTML=quantity;
+                document.getElementById("lblDis").innerHTML=dis;
+                document.getElementById("lblGST").innerHTML=GST;
+                document.getElementById("lblFBill").innerHTML=fBill;
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <div class="d-flex justify-content-center align-items-center " style="height: 500px;">
+            <div style="width: 400px;">
+                <h2 class="text-center">Bill Calculator</h2>
+                <label class="mt-2" for="price">Enter price </label>
+                <div class="mt-2">
+                    <input type="text" class="form-control" id="price">
+                </div>
+                <label class="mt-2" for="quantity">Enter quantity</label>
+                <div class="mt-2">
+                    <input type="text" class="form-control" id="quantity">
+                </div>
+                <label class="mt-2" for="discount">Discount</label>
+                <div class="mt-2">
+                     <input type="text" class="form-control" id="discount">
+                </div>
+                <div class="mt-4">
+                    <button class="btn btn-primary w-100" data-bs-target="#billsummary" data-bs-toggle="modal" onclick="bill()">Calculate Bill</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="billsummary">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Bill Summary</h3>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <dl class="row">
+                            <dt class="col-3">Price</dt>
+                            <dd class="col-9" id="lblPrice"></dd>
+                            <dt class="col-3">Quantity</dt>
+                            <dd class="col-9" id="lblQty"></dd>
+                            <dt class="col-3">Discount</dt>
+                            <dd class="col-9" id="lblDis"></dd>
+                            <dt class="col-3">GST</dt>
+                            <dd class="col-9" id="lblGST"></dd>
+                            <dt class="col-3">Final Bill</dt>
+                            <dd class="col-9" id="lblFBill"></dd>
+                        </dl>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-bs-dismiss="modal" class="btn btn-success">OK</button>
+                    </div>
+                </div>
+            </div>
+            <script src="../node_modules/jquery/dist/jquery.js"></script>
+            <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        </body>
+</html>

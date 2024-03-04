@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Clock</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style>
+            body{
+                background-color: black;
+                color: white;
+            }
+            h1{
+                 font-size: 150px;
+            }
+        </style>
+        <script>
+            setInterval(displayTime,1000);
+            function displayTime(){
+                date =new Date();
+                hour=date.getHours();
+                min=date.getMinutes();
+                sec=date.getSeconds();
+                document.querySelector("h1").innerHTML=date.toLocaleTimeString();
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="displayTime()">
+        <div class="d-flex justify-content-center align-items-center" style="height: 600px;" >
+            <h1></h1>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Count elements</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function bodyload(){
+                alert("Title : "+document.querySelector("title").innerHTML )
+                alert("Links count : "+document.querySelectorAll("a").length);
+                alert("Image count : "+document.querySelectorAll("img").length);
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <div class="d-flex justify-content-between">
+            <a href="">Home</a>
+            <a href="">Log in</a>
+            <a href="">Log out</a>
+        </div>
+        <div class="mt-5">
+            <img src=""  height="100" width="100">
+            <img src=""  height="100" width="100">
+            <img src=""  height="100" width="100">
+            <img src=""  height="100" width="100">
+            <img src=""  height="100" width="100">
+        </div>
+    </body>
+</html>   

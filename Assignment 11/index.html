@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tag</title>
+        <script>
+            function bodyload(){
+                var par=prompt("Enter Parent Tag");
+                var child=prompt("Enter tag to append");
+                var content=prompt("Enter content to display in child");
+                t1=document.createElement(par);
+                t2=document.createElement(child);
+                t2.innerHTML=content;
+                t1.appendChild(t2);
+                document.querySelector("body").appendChild(t1);
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+
+    </body>
+</html>

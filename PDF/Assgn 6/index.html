@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Highlight Bold Words on Mouseover</title>
+      <style>
+         .bold {
+            font-weight: bold;
+         }
+      </style>
+      <script>
+         function highlightBoldWords() {
+            var boldWords = document.getElementsByTagName("strong");
+            // console.log(boldWords);
+            for (var i = 0; i < boldWords.length; i++) {
+               boldWords[i].style.color = "red";
+               boldWords[i].style.fontSize = "20px";
+            }
+         }
+
+         function removeBoldHighlights() {
+            var boldWords = document.getElementsByTagName("strong");
+            for (var i = 0; i < boldWords.length; i++) {
+               boldWords[i].style.color = "black";
+               boldWords[i].style.fontSize = "16px";
+            }
+         }
+      </script>
+   </head>
+   <body>
+      <p>
+         Lorem <strong>ipsum dolor</strong> sit amet,
+         <strong>consectetur adipiscing</strong> elit, sed do eiusmod tempor
+         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+         consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+         esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+      <a
+         href="#"
+         onmouseover="highlightBoldWords()"
+         onmouseout="removeBoldHighlights()"
+         >Hover over me to highlight bold words</a
+      >
+   </body>
+</html>

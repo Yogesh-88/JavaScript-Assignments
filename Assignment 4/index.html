@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Electricity Bill</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      function submit() {
+        var currUnit = document.getElementById("currentUnit").value;
+        var prevUnit = document.getElementById("previousUnit").value;
+        var household = document.getElementById("household");
+        var commercial = document.getElementById("commercial");
+        var industrial = document.getElementById("industrial");
+        var unit = 0;
+        if (household.checked) unit = 8;
+        else if (commercial.checked) unit = 10;
+        else if (industrial.checked) unit = 15;
+        var fbill = currUnit * unit + currUnit * unit * 0.18;
+        document.querySelector("h2").innerHTML = `Basic bill  :: ${currUnit * unit}<br>
+                                                  per unit charges ::${unit} <br>
+                                                  GST  ::  ${currUnit * unit * 0.18}<br>
+                                                  Final Bill :: ${fbill}`;}
+    </script>
+  </head>
+  <body class="container-fluid">
+    <div>
+      <label class="mt-2">Enter current Unit</label>
+      <div class="mt-2">
+        <input type="text" class="form-control w-25" id="currentUnit" />
+      </div>
+      <label class="mt-2">Enter Previous Unit</label>
+      <div class="mt-2">
+        <input type="text" class="form-control w-25" id="previousUnit" />
+      </div>
+      <div class="mt-2">
+        <input type="radio" name="type" id="household" /> Household
+        <input type="radio" name="type" id="commercial" /> Commercial
+        <input type="radio" name="type" id="industrial" /> Industrial
+      </div>
+      <div class="mt-2">
+        <button class="btn btn-primary w-25 mt-2" onclick="submit()">
+          Submit
+        </button>
+      </div>
+      <div>
+        <h2 class="text-primary text-lg-center"></h2>
+      </div>
+    </div>
+  </body>
+</html>

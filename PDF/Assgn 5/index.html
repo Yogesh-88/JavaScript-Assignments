@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dropdown List</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function calculate(){
+                var select=document.getElementById("select");
+                alert(select.length);
+                for(var i=0;i<select.length;i++){
+                    alert(select[i].text)
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <h2>Select Mobile Company</h2>
+        <select id="select" class="form-select" size="6">
+            <option value="redmi">Redmi</option>
+            <option value="oppo">Oppo</option>
+            <option value="samsung">Samsung</option>
+            <option value="vivo">Vivo</option>
+            <option value="oneplus">Oneplus</option>
+            <option value="iphoe">iphone</option>
+        </select>
+        <button class="btn btn-dark mt-3" onclick="calculate()">Calculate</button>
+    </body>
+</html>

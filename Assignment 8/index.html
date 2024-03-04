@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Compount Interest Calulator</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function bodyload(){
+                var principle=prompt("Enter Principle");
+            var duration=prompt("Enter duration in years");
+            for(var rate=5.5;rate<=15;rate=rate+0.25){
+                p=document.createElement("td");
+                n=document.createElement("td");
+                r=document.createElement("td");
+                ci=document.createElement("td");
+                p.innerHTML=principle;
+                n.innerHTML=duration;
+                r.innerHTML=rate;
+                ci.innerHTML=principle*Math.pow((1+rate/100),duration);
+                tr=document.createElement("tr");
+                tr.appendChild(p);
+                tr.appendChild(n);
+                tr.appendChild(r);
+                tr.appendChild(ci);
+                document.querySelector("tbody").appendChild(tr);
+            }
+            }
+        </script>
+    </head>
+    <body onload="bodyload()" class="container-fluid">
+        <table class="table table-striped table-responsive">
+            <thead>
+                <th>Principle</th>
+                <th>Time</th>
+                <th>Rate</th>
+                <th>Compound Interest</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </body>
+</html>

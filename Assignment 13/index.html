@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slide show</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            var img=["./photos/pic1.jpg","./photos/pic2.jpg","./photos/pic3.jpg","./photos/pic4.jpg","./photos/pic5.jpg","./photos/pic6.jpg","./photos/pic7.jpg","./photos/pic8.jpg"]
+            var count=0;
+            function bodyload(){
+                document.querySelector("img").src=img[count];
+            }
+            function prev(){
+                count--;
+                if(count<0)
+                 return;
+                document.querySelector("img").src=img[count];
+            }
+            function next(){
+                count++
+                if(count>img.length-1)
+                 return;
+                document.querySelector("img").src=img[count];
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <img height="300" width="1520">
+        <div class="d-flex justify-content-between" >
+            <button class="btn btn-primary " onclick="prev()">Prev</button>
+            <button class="btn btn-primary" onclick="next()">Next</button>
+        </div>
+    </body>
+</html>

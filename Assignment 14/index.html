@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slide show</title>
+       
+        <script>
+            var img=["./photos/pic1.jpg","./photos/pic2.jpg","./photos/pic3.jpg","./photos/pic4.jpg","./photos/pic5.jpg","./photos/pic6.jpg","./photos/pic7.jpg","./photos/pic8.jpg"]
+            var count=0;
+            function bodyload(){
+                document.querySelector("img").src=img[0];
+            }
+            function prev(){
+                count--;
+                if(count<0)
+                 return;
+                document.querySelector("img").src=img[count];
+            }
+            function next(){
+                count++
+                if(count>img.length-1)
+                 return;
+                document.querySelector("img").src=img[count];
+            }
+            function add(){
+                imgURL=prompt("Enter img URL")
+                if(imgURL==="" || imgURL==null)
+                    return;
+                img.push(imgURL)
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <table border="1" style="margin-left: 80px;">
+            <thead>
+                <tr>
+                    <th><button  onclick="prev()">Prev</button></th>
+                    <th><img height="300" width="1200"></th>
+                    <th><button onclick="next()">Next</button></th>
+                </tr>
+            </thead>
+        </table>
+        <div style="margin-left: 700px; margin-top: 40px" >
+            <button onclick="add()" style="height: 50px; width: 150px; font-size: large ; background-color: red; color: white;" >Add</button>
+        </div>
+    </body>
+</html>

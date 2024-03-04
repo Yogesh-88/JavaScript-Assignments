@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function rowAdd()
+            {
+                tr=document.createElement("tr");
+                td1=document.createElement("td");
+                td2=document.createElement("td");
+                td3=document.createElement("td");
+                td4=document.createElement("td");
+                td1.innerHTML="ABC";
+                td2.innerHTML="12";
+                td3.innerHTML="76.87";
+                td4.innerHTML="CSE";
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                document.querySelector("tbody").appendChild(tr);
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <table class="table table-stripped mt-5">
+            <thead>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Percentage</th>
+                <th>Branch</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <button class="mt-2 btn btn-dark" onclick="rowAdd()">Add row</button>
+    </body>
+</html>

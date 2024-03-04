@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 9</title>
+        <script>
+            function submit(){
+                var name=document.getElementById("name").value;
+                var disp=document.getElementById("error");
+                if(name.length<3)
+                    disp.innerHTML="Enter atleast 3 chars".fontcolor("red");
+                else
+                disp.innerHTML=("Welcome "+ name).fontcolor("blue");
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <label>Enter Your Name</label>
+            <input type="text" id="name">
+            <button onclick="submit()">Submit</button>
+            <h3 id="error"></h3>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      function bodyload() {
+        var n = prompt("Enter last number");
+        document.querySelector("table").style = "block";
+        for (var i = 1; i <= n; i++) {
+          tr = document.createElement("tr");
+          tdNum = document.createElement("td");
+          tdSq = document.createElement("td");
+          tdCube = document.createElement("td");
+          tdSqRoot = document.createElement("td");
+          tdCubeRoot = document.createElement("td");
+          tdNum.innerHTML = i;
+          tdSq.innerHTML = Math.pow(i, 2);
+          tdCube.innerHTML = Math.pow(i, 3);
+          tdSqRoot.innerHTML = Math.sqrt(i).toFixed(4);
+          tdCubeRoot.innerHTML = Math.cbrt(i).toFixed(4);
+          tr.appendChild(tdNum);
+          tr.appendChild(tdSq);
+          tr.appendChild(tdCube);
+          tr.appendChild(tdSqRoot);
+          tr.appendChild(tdCubeRoot);
+          document.querySelector("tbody").appendChild(tr);
+        }
+      }
+    </script>
+  </head>
+  <body class="container-fluid" onload="bodyload()">
+    <table class="table table-hover table-striped" style="display: none">
+      <thead>
+        <th>Number</th>
+        <th>Square</th>
+        <th>Square root</th>
+        <th>Cube</th>
+        <th>Cube root</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>

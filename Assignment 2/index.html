@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      function cal() {
+        var name = document.getElementById("name").value;
+        var roll = document.getElementById("roll").value;
+        var mark1 = document.getElementById("mark1").value;
+        var mark2 = document.getElementById("mark2").value;
+        var mark3 = document.getElementById("mark3").value;
+        var total = parseInt(mark1) + parseInt(mark2) + parseInt(mark3);
+        var per = total / 3;
+        var passFail = "";
+        var grade = ""; 
+        var color = "";
+        if (per >= 40) {
+          passFail = "Pass";
+          color = "green";
+        } else {
+          passFail = "Fail";
+          color = "red";
+        }
+        if (per >= 75 && per <= 100) grade = "Distinction";
+        else if (per >= 60 && per < 75) grade = "First Class";
+        else if (per >= 50 && per < 60) grade = "Second Class";
+        else grade = "Pass class";
+        // document.getElementById("div").style.display = "block;";
+
+        document.getElementById("lblname").innerHTML = name;
+        document.getElementById("lblroll").innerHTML = roll;
+        document.getElementById("lbltot").innerHTML = total;
+        document.getElementById("lblper").innerHTML = per;
+        document.getElementById("status").innerHTML = passFail.fontcolor(color);
+        document.getElementById("grade").innerHTML = grade;
+      }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <div>
+      <div>
+        <label class="mt-2">Name</label>
+        <div class="mt-2">
+          <input type="text" class="form-control w-25" id="name" />
+        </div>
+        <label class="mt-2">Roll No</label>
+        <div class="mt-2">
+          <input type="text" class="form-control w-25" id="roll" />
+        </div>
+        <label class="mt-2">Enter Sub1 marks</label>
+        <div class="mt-2">
+          <input type="text" class="form-control w-25" id="mark1" />
+        </div>
+        <label class="mt-2">Enter Sub2 marks</label>
+        <div class="mt-2">
+          <input type="text" class="form-control w-25" id="mark2" />
+        </div>
+        <label class="mt-2">Enter Sub3 marks</label>
+        <div class="mt-2">
+          <input type="text" class="form-control w-25" id="mark3" />
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-primary w-25" onclick="cal()">
+            calculate
+          </button>
+        </div>
+      </div>
+      <div class="mt-5" id="div">
+        <dl class="row">
+          <dt class="col-3">Name</dt>
+          <dd id="lblname" class="col-9"></dd>
+          <dt class="col-3">Roll Number</dt>
+          <dd id="lblroll" class="col-9"></dd>
+          <dt class="col-3">Total</dt>
+          <dd id="lbltot" class="col-9"></dd>
+          <dt class="col-3">Percentage</dt>
+          <dd id="lblper" class="col-9"></dd>
+          <dt class="col-3">Status</dt>
+          <dd id="status" class="col-9"></dd>
+          <dt class="col-3">Grade</dt>
+          <dd id="grade" class="col-9"></dd>
+        </dl>
+      </div>
+    </div>
+  </body>
+</html>

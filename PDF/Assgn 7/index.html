@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Increment/Deacrement</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            var temp=0;
+            function display(){
+                document.querySelector("h2").innerHTML=temp;
+            }
+            function add(){
+                temp++;
+                display();
+            }
+            function sub(){
+                temp--;
+                display();
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+         <div class="d-flex justify-content-center align-items-center" style="height: 500px;">
+            <div class="w-25">
+                <button class="btn btn-primary w-100" onclick="add()">++</button>
+                <h2 class="text-center">0</h2>
+                <button class="btn btn-danger w-100" onclick="sub()">--</button>
+            </div>
+         </div>   
+    </body>
+</html>

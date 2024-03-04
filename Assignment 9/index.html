@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculate Age</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function daysInMonth(anyDateInMonth) {
+                    return new Date(anyDateInMonth.getFullYear(), 
+                    anyDateInMonth.getMonth()+1, 
+                    0).getDate();}
+           
+            function submit(){
+                var dateUser=document.getElementById("date").value;
+                var d=new Date(dateUser);
+                var today=new Date();
+                var year=d.getFullYear()-today.getFullYear();
+                month=d.getMonth()+1-today.getMonth()+1
+                day=daysInMonth(d)-daysInMonth(today)
+                document.querySelector("h2").innerHTML=`Years - ${year}<br>
+                                                        Months - ${month }<br>
+                                                        Days -${day } `};
+                
+        </script>
+    </head>
+    <body class="container-fluid">
+     
+        <div>
+            <label class="form-check-label">Enter DOB</label>
+                <div class="mt-2">
+                    <input type="date" id="date">                    
+                </div>
+                <div>
+                    <button class="btn btn-primary mt-3" onclick="submit()">Submit</button>
+                </div>
+                <h2>
+
+                </h2>
+        </div>
+    </body>
+</html>
